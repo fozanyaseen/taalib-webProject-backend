@@ -156,7 +156,7 @@ const generateChallan = async (req,res) =>{
             let newFeeChallan = new FeechallanModel({
                 studentID:studentID,
                 isPaid:false,
-                pathToFile:`challans/FeeChallans/${studentID}.pdf`
+                pathToFile:`challans/${studentID}.pdf`
             })
 
             newFeeChallan.save().then((doc)=>{
