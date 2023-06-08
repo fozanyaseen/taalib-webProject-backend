@@ -237,11 +237,11 @@ module.exports = {
 function generateCustomerInformation(doc, invoice) {
 	const Student_info = invoice.Student_info;
 
-	doc.text(`Invoice Number: ${invoice.studentID}`, 50, 200)
+	doc.text(`Invoice Number: ${invoice.Student_info.studentId}`, 50, 200)
 		.text(`Invoice Date: ${new Date()}`, 50, 215)
-		.text(`Balance Due: ${invoice.Total}`, 50, 130)
+		.text(`Balance Due: ${invoice.subtotal}`, 50, 130)
 
-		.text(Student_info.studentID, 300, 200)
+		.text(Student_info.studentId, 300, 200)
 		.text("XYZ School", 300, 215)
 		.moveDown();
 }
@@ -266,7 +266,7 @@ function generateInvoiceTable(doc, invoice) {
 			position,
 			item.item,
 			item.description,
-			item.total
+			item.amount
 		);
 	}
 }
